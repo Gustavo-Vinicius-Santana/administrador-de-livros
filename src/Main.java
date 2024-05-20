@@ -2,12 +2,6 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        // DEFINIÇÃO DE TECLADO
-        Scanner teclado = new Scanner(System.in);
-
-        // DEFINIÇÃO DE VARIAVEIS
-        int escolha;
-
         // TITULO DA APLICAÇÃO
         System.out.println("\nBEM-VINDO AO SISTEMA DE BLIBIOTECAS");
         System.out.print("\n-----------------------------------------------------------------\n");
@@ -19,10 +13,38 @@ public class Main {
         System.out.println("3-PEGAR LIVRO EMPRESTADO");
         System.out.println("4-DEVOLVER UM LIVRO\n");
 
-        // RESPOSTA DO USUARIO
-        System.out.print("Digite o numero da função que você deseja executar: ");
-        escolha = teclado.nextInt();
+        // ESCOLHA DO USUARIO
+        choiceOption();
 
         System.out.print("\n-----------------------------------------------------------------\n");
+    }
+
+    public static void choiceOption(){
+        // DEFINIÇÃO DE TECLADO
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.print("\nDigite o numero da função que você deseja executar: ");
+        int choice = teclado.nextInt();
+
+        switch(choice){
+            case 1:
+                System.out.print("\nFunção cadastro usuario escolhida.\n");
+                break;
+            case 2:
+                System.out.print("\nFunção cadastro livros escolhida.\n");
+                break;
+            case 3:
+                System.out.print("\nFunção de pegar livro emprestado.\n");
+                break;
+            case 4:
+                System.out.print("\nFunção de devolver um livro.\n");
+                break;
+            default:
+                System.out.print("\n-----------------------------------------------------------------\n");
+                System.out.print("\nO numero digitado é invalido. digite novamente.");
+                choiceOption();
+
+        }
+
     }
 }
