@@ -1,3 +1,5 @@
+import models.Biblioteca;
+
 import java.util.Scanner;
 
 public class Main {
@@ -11,7 +13,8 @@ public class Main {
         System.out.println("1-CADASTRAR USUARIO");
         System.out.println("2-CADASTRAR LIVRO");
         System.out.println("3-PEGAR LIVRO EMPRESTADO");
-        System.out.println("4-DEVOLVER UM LIVRO\n");
+        System.out.println("4-DEVOLVER UM LIVRO");
+        System.out.println("5-MOSTRAR USUÁRIOS CADASTRADOS\n");
 
         // ESCOLHA DO USUARIO
         choiceOption();
@@ -26,10 +29,13 @@ public class Main {
         System.out.print("\nDigite o numero da função que você deseja executar: ");
         int choice = teclado.nextInt();
 
+        //Criação de objetos
+        Biblioteca biblioteca = new Biblioteca();
+
+
         switch(choice){
             case 1:
-                System.out.print("\nFunção cadastro usuario escolhida.\n");
-                break;
+                biblioteca.addUsuario();
             case 2:
                 System.out.print("\nFunção cadastro livros escolhida.\n");
                 break;
@@ -38,6 +44,9 @@ public class Main {
                 break;
             case 4:
                 System.out.print("\nFunção de devolver um livro.\n");
+                break;
+            case 5:
+                biblioteca.getUsers();
                 break;
             default:
                 System.out.print("\n-----------------------------------------------------------------\n");
