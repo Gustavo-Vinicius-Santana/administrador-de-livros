@@ -16,7 +16,7 @@ public class Biblioteca {
     public void addUsuario(){
         Scanner input = new Scanner(System.in);
         String nome;
-        System.out.println("Digite aqui as suas caracteristicas:");
+        System.out.print("Digite o nome do novo usuario: ");
         nome = input.next();
         this.usuariosLista.add(new Usuarios(nome));
     }
