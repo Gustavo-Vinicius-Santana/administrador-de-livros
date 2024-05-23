@@ -1,4 +1,4 @@
-import models.Biblioteca;
+import app.Biblioteca;
 
 import java.util.Scanner;
 
