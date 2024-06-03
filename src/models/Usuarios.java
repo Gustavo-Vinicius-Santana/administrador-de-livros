@@ -8,7 +8,7 @@ package models;
             private ArrayList<String> listaLivros;
             private static int contId = 1;
 
-            public Usuarios(String nome) {
+            public Usuarios{
                 this.nome = nome;
                 this.id = contId++;
                 this.listaLivros = new ArrayList<>();
@@ -32,6 +32,10 @@ package models;
 
             public void removerLivro(String livro) {
                 listaLivros.remove(livro);
+            }
+
+            public void setNome() {
+                this.nome = nome;
             }
         }
 
