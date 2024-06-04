@@ -58,6 +58,7 @@ public class Main {
                     break;
                 case 4:
                     System.out.print("\nFunção de devolver um livro.\n");
+                    biblioteca.devolverLivro();
                     break;
                 case 5:
                     System.out.print("\nMostrar usuarios escolhida\n");

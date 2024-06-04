@@ -30,12 +30,15 @@ import models.Livros;
             }
 
             public void adicionarLivro(Livros livro) {
+
                 listaLivrosEmprestados.add(livro);
+                System.out.println("O livro "+ listaLivrosEmprestados.get(0).getTitulo()+" foi adicionado!");
             }
 
-            public void removerLivro(String livro) {
+            public void removerLivro(int index) {
 
-                listaLivrosEmprestados.remove(livro);
+                listaLivrosEmprestados.remove(index);
+                System.out.println("O Livro foi devolvido");
             }
 
             public void setNome(String nome) {
