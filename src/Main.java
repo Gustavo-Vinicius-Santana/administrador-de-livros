@@ -50,9 +50,11 @@ public class Main {
                     break;
                 case 2:
                     System.out.print("\nCadastro livros escolhida.\n");
+                    biblioteca.addLivros();
                     break;
                 case 3:
                     System.out.print("\nFunção de pegar livro emprestado.\n");
+                    biblioteca.pegarLivroEmprestado();
                     break;
                 case 4:
                     System.out.print("\nFunção de devolver um livro.\n");

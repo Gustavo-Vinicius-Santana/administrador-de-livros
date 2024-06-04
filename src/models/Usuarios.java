@@ -1,40 +1,44 @@
 package models;
+import models.Livros;
 
         import java.util.ArrayList;
 
         public class Usuarios {
             private String nome;
             private int id;
-            private ArrayList<String> listaLivros;
+            private ArrayList<Livros> listaLivrosEmprestados;
             private static int contId = 1;
 
-            public Usuarios{
+            public Usuarios(){
                 this.nome = nome;
                 this.id = contId++;
-                this.listaLivros = new ArrayList<>();
+                this.listaLivrosEmprestados = new ArrayList<>();
             }
 
             public String getNome() {
+
                 return nome;
             }
 
             public int getId() {
+
                 return id;
             }
 
-            public ArrayList<String> getListaLivros() {
-                return listaLivros;
+            public ArrayList<Livros> getListaLivros() {
+                return listaLivrosEmprestados;
             }
 
-            public void adicionarLivro(String livro) {
-                listaLivros.add(livro);
+            public void adicionarLivro(Livros livro) {
+                listaLivrosEmprestados.add(livro);
             }
 
             public void removerLivro(String livro) {
-                listaLivros.remove(livro);
+
+                listaLivrosEmprestados.remove(livro);
             }
 
-            public void setNome() {
+            public void setNome(String nome) {
                 this.nome = nome;
             }
         }
