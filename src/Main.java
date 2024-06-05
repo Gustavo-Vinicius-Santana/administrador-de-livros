@@ -13,8 +13,9 @@ public class Main {
             "\n4-DEVOLVER UM LIVRO" +
             "\n5-MOSTRAR USUÁRIOS CADASTRADOS" +
             "\n6-MOSTRAR USUARIOS E SEUS LIVROS" +
-            "\n7-MOSTRAR LISTA DE FUNÇÕES" +
-            "\n8-PARAR A APLICAÇÃO";
+            "\n7-MOSTRAR TODOS OS LIVROS" +
+            "\n8-MOSTRAR LISTA DE FUNÇÕES" +
+            "\n9-PARAR A APLICAÇÃO";
 
     public static void main(String[] args) {
         // TITULO DA APLICAÇÃO
@@ -75,10 +76,15 @@ public class Main {
                     System.out.print(BARRA);
                     break;
                 case 7:
-                    System.out.print(OPÇÕES_FUNÇÕES);
+                    System.out.print("\nMostrar todos os livros escolhida\n");
+                    biblioteca.mostrarTodosLivros();
                     System.out.print(BARRA);
                     break;
                 case 8:
+                    System.out.print(OPÇÕES_FUNÇÕES);
+                    System.out.print(BARRA);
+                    break;
+                case 9:
                     System.out.print("\nSistema encerrado.");
                     continuous = false;
                     break;

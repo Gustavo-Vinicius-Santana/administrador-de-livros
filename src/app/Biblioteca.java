@@ -83,6 +83,23 @@ public class Biblioteca {
         }
     }
 
+    // FUNÇÃO MOSTRAR TODOS OS LIVROS E SEUS DETALHES
+    public void mostrarTodosLivros(){
+        if (livrosLista.isEmpty()) {
+            System.out.println("Não há livros cadastrados.");
+        } else {
+            int indice = 0;
+            for(Livros livro: livrosLista){
+                System.out.println(indice +"-"+ livro.getTitulo());
+                System.out.println("    " + "quantidade: " + livro.getQuantidade());
+                System.out.println("    " + "autor: " + livro.getAutor());
+                System.out.println("    " + "genero: " + livro.getGenero());
+                indice += 1;
+            }
+        }
+
+    }
+
     // FUNÇÃO DE ATRELAR LIVRO A UM USUARIO
     public void pegarLivroEmprestado(){
         Scanner input = new Scanner(System.in);
