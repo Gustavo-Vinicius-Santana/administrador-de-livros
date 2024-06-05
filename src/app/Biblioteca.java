@@ -57,7 +57,30 @@ public class Biblioteca {
                 indice += 1;
             }
         }
+    }
 
+    // FUNÇÃO MOSTRAR USUSARIOS E OS LIVROS ATRELADOS A ELE
+    public void getUserBooks(){
+        if (usuariosLista.isEmpty()) {
+            System.out.println("Não há usuários cadastrados.");
+        } else {
+            int indice = 0;
+            for(Usuarios usuario: usuariosLista){
+                System.out.println(indice +" - "+ usuario.getNome());
+
+                System.out.print("possui:");
+                ArrayList<Livros> livrosUsario = usuario.getListaLivros();
+                int indiceLivro = 0;
+                for (Livros livro : livrosUsario) {
+
+                    String titulo = livro.getTitulo();
+                    System.out.println("   " + indiceLivro + " - " + titulo);
+                    indiceLivro += 1;
+                }
+
+                indice += 1;
+            }
+        }
     }
 
     // FUNÇÃO DE ATRELAR LIVRO A UM USUARIO
