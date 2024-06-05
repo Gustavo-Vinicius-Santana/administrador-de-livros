@@ -88,16 +88,22 @@ public class Biblioteca {
             for(Usuarios usuario: usuariosLista){
                 System.out.println(indice +" - "+ usuario.getNome());
 
-                System.out.print("possui:");
+                System.out.print("possui: ");
                 ArrayList<Livros> livrosUsario = usuario.getListaLivros();
 
-                // REPETIÇÃO PARA MOSTRAR OS LIVROS E A QUANTIDADE DOS USUARIOS
-                int indiceLivro = 0;
-                for (Livros livro : livrosUsario) {
+                if(livrosUsario.isEmpty()){
+                    System.out.println("não há");
+                }else{
+                    System.out.print("\n");
+                    // REPETIÇÃO PARA MOSTRAR OS LIVROS E A QUANTIDADE DOS USUARIOS
+                    int indiceLivro = 0;
+                    for (Livros livro : livrosUsario) {
 
-                    String titulo = livro.getTitulo();
-                    System.out.println("   " + indiceLivro + " - " + titulo);
-                    indiceLivro += 1;
+                        String titulo = livro.getTitulo();
+                        System.out.println("   " + indiceLivro + " - " + titulo);
+                        indiceLivro += 1;
+                    }
+
                 }
                 indice += 1;
             }
