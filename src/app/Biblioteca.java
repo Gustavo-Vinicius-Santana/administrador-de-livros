@@ -9,10 +9,13 @@ public class Biblioteca {
     private ArrayList<Usuarios> usuariosLista;
     public ArrayList<Livros> livrosLista;
 
+    // METODO CONSTRUTOR
     public Biblioteca() {
         usuariosLista = new ArrayList<>();
         livrosLista = new ArrayList<>();
     }
+
+    // FUNÇÃO PARA CADASTRAR UM USUARIO
     public void addUsuario(){
         Scanner input = new Scanner(System.in);
         String nome;
@@ -22,6 +25,8 @@ public class Biblioteca {
         user.setNome(nome);
         this.usuariosLista.add(user);
     }
+
+    // FUNÇÃO PARA CADASTRAR UM LIVRO
     public  void addLivros(){
         Scanner input = new Scanner(System.in);
         System.out.print("Digite o nome do novo livro: ");
@@ -38,54 +43,62 @@ public class Biblioteca {
         livro.setGenero(genero);
         livro.setQuantidade(quantidade);
         livrosLista.add(livro);
-        System.out.println("O livro "+titulo+" foi adiciondo com sucesso!");
+        System.out.println("\nO livro "+titulo+" foi adiciondo com sucesso!");
     }
+
+    // FUNÇÃO PARA RETORNAR TODOS OS USUARIOS CADASTRADOS
     public void getUsers(){
         if (usuariosLista.isEmpty()) {
             System.out.println("Não há usuários cadastrados.");
         } else {
-            int a = 0;
+            int indice = 0;
             for(Usuarios element: usuariosLista){
-                System.out.println(a +">"+ element.getNome());
-                a= a + 1;
+                System.out.println(indice +"-"+ element.getNome());
+                indice += 1;
             }
         }
 
     }
+
+    // FUNÇÃO DE ATRELAR LIVRO A UM USUARIO
     public void pegarLivroEmprestado(){
-        /* for pela listaa de livros cadastrados,
-        * verificar se tem livros cadastrados, se n  tiver avisar,
-        * tendo livros cadastrados,  perguntar quem é que quer cadastrar, e depois cadastrar diretamente no usuário.*/
         Scanner input = new Scanner(System.in);
         if (livrosLista.isEmpty()){
             System.out.println("Não há livros cadasatrados...");
         }
         else {
             System.out.println("Escolha o número equivalente ao livro escolhido");
-            int a = 0;
+
+            int indice = 0;
             for (Livros element : livrosLista) {
                 String titulo = element.getTitulo();
-                System.out.println(a + " " + titulo);
-                a += 1;
+                System.out.println(indice + " " + titulo);
+                indice += 1;
             }
-            int escolha = input.nextInt();
-                Livros livroEscolhido;
-                livroEscolhido = livrosLista.get(escolha);
-                System.out.println("o livro escolhido foi " + livroEscolhido.getTitulo());
-                System.out.println("Digite para quem o livro deve ser enviado");
-                getUsers();
-                System.out.println("Digite o número equivalente ao index do elemento selecionado");
 
-                int indexEscolhido = input.nextInt();
-                Usuarios userEscolhido = usuariosLista.get(indexEscolhido);
-                userEscolhido.adicionarLivro(livroEscolhido);
-            /*faltando diminuir a quantidade na classe livro/quntidade.*/
+            int escolha = input.nextInt();
+
+            Livros livroEscolhido = livrosLista.get(escolha);
+            Integer quantidadePrevia = livroEscolhido.getQuantidade();
+            Integer quantidadeAtual = quantidadePrevia - 1;
+            livroEscolhido.setQuantidade(quantidadeAtual);
+            System.out.println("o livro escolhido foi " + livroEscolhido.getTitulo());
+
+            System.out.println("Digite para quem o livro deve ser enviado: ");
+            getUsers();
+            System.out.println("Digite o número equivalente ao index do elemento selecionado: ");
+            int indexEscolhido = input.nextInt();
+            Usuarios userEscolhido = usuariosLista.get(indexEscolhido);
+            userEscolhido.adicionarLivro(livroEscolhido);
         }
 
     }
+
+    // FUNÇÃO PARA O USUARIO ESCOLHIDO DEVOLVER O LIVRO
     public void devolverLivro(){
         Scanner input = new Scanner(System.in);
         getUsers();
+
         System.out.println("Digite o indice do usuário que irá devolver o livro");
         int escolha = input.nextInt();
         Usuarios userEscolhido = usuariosLista.get(escolha);
@@ -94,16 +107,18 @@ public class Biblioteca {
         }
         else{
             for (Livros element : userEscolhido.getListaLivros() ){
-                int a = 0;
-                System.out.println(a+" > " + element.getTitulo());
-                a = a + 1;
+                int indice = 0;
+                System.out.println(indice+"-" + element.getTitulo());
+                indice += 1;
             }
-            System.out.println("Digite o indice do livro a ser devolvido. ");
+            System.out.println("Digite o indice do livro a ser devolvido: ");
             int indiceLivro = input.nextInt();
             userEscolhido.removerLivro(indiceLivro);
+
+            Livros livroEscolhido = livrosLista.get(indiceLivro);
+            Integer quantidadePrevia = livroEscolhido.getQuantidade();
+            Integer quantidadeAtual = quantidadePrevia + 1;
+            livroEscolhido.setQuantidade(quantidadeAtual);
         }
-
-
     }
-
 }

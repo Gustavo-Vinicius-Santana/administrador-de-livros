@@ -51,14 +51,17 @@ public class Main {
                 case 2:
                     System.out.print("\nCadastro livros escolhida.\n");
                     biblioteca.addLivros();
+                    System.out.print(BARRA);
                     break;
                 case 3:
                     System.out.print("\nFunção de pegar livro emprestado.\n");
                     biblioteca.pegarLivroEmprestado();
+                    System.out.print(BARRA);
                     break;
                 case 4:
                     System.out.print("\nFunção de devolver um livro.\n");
                     biblioteca.devolverLivro();
+                    System.out.print(BARRA);
                     break;
                 case 5:
                     System.out.print("\nMostrar usuarios escolhida\n");
