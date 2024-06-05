@@ -50,7 +50,7 @@ public class Biblioteca {
 
         // ENTRADA DA QUANTIDADE DOS LIVROS
         System.out.print("Digite a quantidade de livros disponíveis: ");
-        int quantidade = input.nextInt();
+        int quantidade = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
 
         // CRIAR O LIVRO DE ACORDO COM A MODEL
         Livros livro = new Livros();
@@ -138,7 +138,7 @@ public class Biblioteca {
 
             // ENTRADA DA ESCOLHA DE ACORDO COM O INDICE
             System.out.println("Escolha o número equivalente ao livro escolhido: ");
-            int escolha = input.nextInt();
+            int escolha = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
 
             // DIMINUINDO A QUANTIDADE DE LIVROS DE ACORDO COM A ESCOLHA
             Livros livroEscolhido = livrosLista.get(escolha);
@@ -152,7 +152,7 @@ public class Biblioteca {
 
             // ENTRADA DO INDICE DO USUARIO QUE VAI PEGAR O LIVRO
             System.out.println("Digite o número equivalente ao index do elemento selecionado: ");
-            int indexEscolhido = input.nextInt();
+            int indexEscolhido = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
 
             // ADICIONANDO NA LISTA DE USUARIOS
             Usuarios userEscolhido = usuariosLista.get(indexEscolhido);
@@ -168,7 +168,7 @@ public class Biblioteca {
 
         // ENTRADA DO INDICE DO USUARIO QUE VAI DEVOLVER UM LIVRO
         System.out.println("Digite o indice do usuário que irá devolver o livro");
-        int escolha = input.nextInt();
+        int escolha = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
         Usuarios userEscolhido = usuariosLista.get(escolha);
 
         if (userEscolhido.getListaLivros().isEmpty()){
@@ -184,7 +184,7 @@ public class Biblioteca {
 
             // ENTRADA DO INDICE DO LIVRO QUE SERÁ DIGITADO
             System.out.println("Digite o indice do livro a ser devolvido: ");
-            int indiceLivro = input.nextInt();
+            int indiceLivro = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
             userEscolhido.removerLivro(indiceLivro);
 
             // AUMENTANDO A QUANTIDADE DO LIVRO DEVOLVIDO

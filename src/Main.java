@@ -43,7 +43,7 @@ public class Main {
         while(continuous){
             // ESCOLHA DA FUNÇÃO QUE O USUARIO DESEJA REALIZAR
             System.out.print("\nDigite o numero da função que você deseja executar: ");
-            int choice = teclado.nextInt();
+            int choice = teclado.nextInt(); // !!!!! BUG DO INPUT !!!!!
             System.out.print(BARRA);
 
             switch(choice){
