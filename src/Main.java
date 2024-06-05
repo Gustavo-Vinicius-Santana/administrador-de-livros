@@ -3,8 +3,9 @@ import app.Biblioteca;
 import java.util.Scanner;
 
 public class Main {
+    // CONSTANTE DE BARRA
     public static final String BARRA = "\n-----------------------------------------------------------------\n";
-
+    // CONSTANTE DA LISTA DE FUNÇÕES
     public static final String OPÇÕES_FUNÇÕES =
             "\nINTERFACE DE INTERAÇÃO:" +
             "\n1-CADASTRAR USUARIO" +
@@ -17,6 +18,7 @@ public class Main {
             "\n8-MOSTRAR LISTA DE FUNÇÕES" +
             "\n9-PARAR A APLICAÇÃO";
 
+    // METODO MAIN
     public static void main(String[] args) {
         // TITULO DA APLICAÇÃO
         System.out.print(BARRA);
