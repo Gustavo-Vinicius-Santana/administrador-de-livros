@@ -50,7 +50,12 @@ public class Biblioteca {
 
         // ENTRADA DA QUANTIDADE DOS LIVROS
         System.out.print("Digite a quantidade de livros disponíveis: ");
+        while (!input.hasNextInt()) {
+            System.out.println("Insira um número válido!");
+            input.next();
+        }
         int quantidade = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
+        System.out.println("Temos " + quantidade + " livros com esse título, disponíveis no momento.");
 
         // CRIAR O LIVRO DE ACORDO COM A MODEL
         Livros livro = new Livros();
@@ -144,6 +149,10 @@ public class Biblioteca {
 
             // ENTRADA DA ESCOLHA DE ACORDO COM O INDICE
             System.out.println("Escolha o número equivalente ao livro escolhido: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Insira um número válido!");
+                input.next();
+            }
             int escolha = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
 
             // DIMINUINDO A QUANTIDADE DE LIVROS DE ACORDO COM A ESCOLHA
@@ -158,6 +167,10 @@ public class Biblioteca {
 
             // ENTRADA DO INDICE DO USUARIO QUE VAI PEGAR O LIVRO
             System.out.println("Digite o número equivalente ao index do elemento selecionado: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Insira um número válido!");
+                input.next();
+            }
             int indexEscolhido = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
 
             // ADICIONANDO NA LISTA DE USUARIOS
@@ -174,6 +187,10 @@ public class Biblioteca {
 
         // ENTRADA DO INDICE DO USUARIO QUE VAI DEVOLVER UM LIVRO
         System.out.println("Digite o indice do usuário que irá devolver o livro");
+        while (!input.hasNextInt()) {
+            System.out.println("Insira um número válido!");
+            input.next();
+        }
         int escolha = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
         Usuarios userEscolhido = usuariosLista.get(escolha);
 
@@ -190,6 +207,10 @@ public class Biblioteca {
 
             // ENTRADA DO INDICE DO LIVRO QUE SERÁ DIGITADO
             System.out.println("Digite o indice do livro a ser devolvido: ");
+            while (!input.hasNextInt()) {
+                System.out.println("Insira um número válido!");
+                input.next();
+            }
             int indiceLivro = input.nextInt(); // !!!!! BUG DO INPUT !!!!!
             userEscolhido.removerLivro(indiceLivro);
 
