@@ -48,7 +48,6 @@ public class Main {
                 teclado.next();
             }
             int choice = teclado.nextInt(); // !!!!! BUG DO INPUT !!!!!
-                System.out.println("Escolha: " + choice);
             System.out.print(BARRA);
 
             switch(choice){
@@ -79,7 +78,7 @@ public class Main {
                     break;
                 case 6:
                     System.out.print("\nMostrar usuarios e seus livros escolhida\n");
-                    biblioteca.getUserBooks();
+                    biblioteca.mostrarLivrosUsuarios();
                     System.out.print(BARRA);
                     break;
                 case 7:

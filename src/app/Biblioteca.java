@@ -84,7 +84,7 @@ public class Biblioteca {
     }
 
     // FUNÇÃO MOSTRAR USUSARIOS E OS LIVROS ATRELADOS A ELE
-    public void getUserBooks(){
+    public void mostrarLivrosUsuarios(){
         if (usuariosLista.isEmpty()) {
             System.out.println("Não há usuários cadastrados."); // MENSAGEM QUANDO NÃO HÁ USUARIOS CADASTRADOS
         } else {
@@ -148,7 +148,7 @@ public class Biblioteca {
             }
 
             // ENTRADA DA ESCOLHA DE ACORDO COM O INDICE
-            System.out.println("Escolha o número equivalente ao livro escolhido: ");
+            System.out.print("Escolha o número equivalente ao livro escolhido: ");
             while (!input.hasNextInt()) {
                 System.out.println("Insira um número válido!");
                 input.next();
@@ -160,7 +160,7 @@ public class Biblioteca {
             Integer quantidadePrevia = livroEscolhido.getQuantidade();
             Integer quantidadeAtual = quantidadePrevia - 1;
             livroEscolhido.setQuantidade(quantidadeAtual);
-            System.out.println("o livro escolhido foi " + livroEscolhido.getTitulo());
+            System.out.print("o livro escolhido foi " + livroEscolhido.getTitulo());
 
             // MOSTRAR TODOS OS USUARIOS
             getUsers();
@@ -186,7 +186,7 @@ public class Biblioteca {
         getUsers();
 
         // ENTRADA DO INDICE DO USUARIO QUE VAI DEVOLVER UM LIVRO
-        System.out.println("Digite o indice do usuário que irá devolver o livro");
+        System.out.println("Digite o indice do usuário que irá devolver o livro: ");
         while (!input.hasNextInt()) {
             System.out.println("Insira um número válido!");
             input.next();
@@ -206,7 +206,7 @@ public class Biblioteca {
             }
 
             // ENTRADA DO INDICE DO LIVRO QUE SERÁ DIGITADO
-            System.out.println("Digite o indice do livro a ser devolvido: ");
+            System.out.print("Digite o indice do livro a ser devolvido: ");
             while (!input.hasNextInt()) {
                 System.out.println("Insira um número válido!");
                 input.next();
