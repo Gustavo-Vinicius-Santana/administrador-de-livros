@@ -9,7 +9,7 @@
 
 ## Introdução
 
-Este sistema de administração de biblioteca foi desenvolvido em Java usando o IntelliJ IDEA. Ele permite gerenciar livros, usuários e controlar empréstimos de maneira eficiente.
+Este sistema de administração de biblioteca foi desenvolvido em Java usando o IntelliJ IDEA. Ele permite gerenciar livros, usuários e controlar empréstimos de maneira eficiente. Sistema feito em equipe usando os conceitos de git flow para organizar o fluxo de trabalho.
 
 ## Funcionalidades
 
